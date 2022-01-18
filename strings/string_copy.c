@@ -1,7 +1,4 @@
 // Copy a String
-// Created by
-//  ... (z0000000)
-// Created on 2019-??-??
 
 #include <stdio.h>
 
@@ -28,5 +25,12 @@ int main(int argc, char *argv[]) {
 // is `destSize` elements in size; only copies up to `destSize` bytes.
 // Ensures the `destination` array is null-terminated.
 void string_copy(char *destination, char *source, int destination_size) {
-    // Put your code here
+    int i = 0;
+    while (i < destination_size-1) {
+        destination[i] = source[i];
+        i++;
+    }
+    if (i == destination_size-1){
+        destination[destination_size-1] = '\0';
+    }
 }

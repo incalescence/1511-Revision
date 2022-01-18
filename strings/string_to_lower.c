@@ -1,7 +1,4 @@
 // convert a string to lowercase
-// created by
-//  ... (z0000000)
-// created on 2019-??-??
 
 #include <stdio.h>
 
@@ -29,5 +26,11 @@ int main(int argc, char *argv[]) {
 
 // Convert the characters in `buffer` to lower case
 void string_to_lower(char *buffer) {
-    // YOUR CODE GOES HERE!
+    int i = 0;
+    while(buffer[i] != '\0'){
+        if(buffer[i] >= 'A' && buffer[i] <= 'Z') {
+            buffer[i] += 32;
+        }
+        i++;
+    }
 }

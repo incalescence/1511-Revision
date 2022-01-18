@@ -1,7 +1,4 @@
 // CONVERT A STRING TO UPPERCASE
-// CREATED BY
-//  ... (Z0000000)
-// CREATED ON 2019-??-??
 
 #include <stdio.h>
 
@@ -28,5 +25,11 @@ int main(int argc, char *argv[]) {
 
 // Convert the characters in `buffer` to upper case
 void string_to_upper(char *buffer) {
-    // YOUR CODE GOES HERE!
+    int i = 0;
+    while (buffer[i] != '\0') {
+        if (buffer[i] >= 'a' && buffer[i] <= 'z') {
+            buffer[i] -= 32;
+        }
+        i++;
+    }
 }
