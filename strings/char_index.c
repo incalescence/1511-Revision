@@ -1,15 +1,14 @@
 // Find the index of a character in a given string.
-// Created by
-//  ... (z0000000)
-// Created on 2019-??-??
 
 #include <stdio.h>
+#include <stdbool.h>
 
 #define BUFFER_LENGTH 1024
 #define NOT_IN_STRING -1
 
 void read_line(int buffer_len, char *buffer);
 int char_index(int c, char *string);
+int string_length(char *string);
 
 // DO NOT CHANGE THIS MAIN FUNCTION
 int main(int argc, char *argv[]) {
@@ -40,13 +39,42 @@ int main(int argc, char *argv[]) {
 // Read a line of input into `buffer`, excluding the newline;
 // ensures that `buffer` is a null-terminated string.
 void read_line(int buffer_len, char *buffer) {
-    // Your code goes here!
+    int c = getchar();
+    int i = 0;
+    int newline = 10;
+    while (c != newline && c != EOF && i < buffer_len-1) {
+        buffer[i] = c;
+        c = getchar();
+        i++;
+    }
+    buffer[i] = '\0';
+}
+
+
+int string_length(char *string) {
+    int length = 0;
+    int i = 0;
+    while (string[i] != '\0') {
+        length++;
+        i++;
+    }
+    return length;
 }
 
 // Return the index of the first occurrence of
 // character `c` in the string, or `NOT_IN_STRING`
 int char_index(int c, char *string) {
-    // Your code goes here!
-    // Don't forget to return your result.
-    return 0;
+    int index = 0;
+    bool notinstring = true;
+    while (index < string_length(string)) {
+        if (string[index] == c) {
+            notinstring = false;
+            break;
+        }
+        index++;
+    }
+    if (notinstring) {
+        index = NOT_IN_STRING;
+    }
+    return index;
 }

@@ -1,7 +1,4 @@
 // Displaying arrays as text
-// Created by
-//  ... (z0000000)
-// Created on 2019-??-??
 
 #include <stdio.h>
 
@@ -57,5 +54,11 @@ int main(int argc, char *argv[]) {
 }
 
 void show_terminated_letters(char *letters) {
-    // Your code here
+    int i = 0;
+    int c = letters[i];
+    while (c != '\0') {
+        putchar(c);
+        i++;
+        c = letters[i];
+    }
 }

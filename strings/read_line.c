@@ -27,7 +27,7 @@ void read_line(int buffer_len, char *buffer) {
     int c = getchar();
     int i = 0;
     int newline = 10;
-    while (c != newline && c != EOF) {
+    while (c != newline && c != EOF && i < buffer_len-1) {
         buffer[i] = c;
         c = getchar();
         i++;

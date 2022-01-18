@@ -55,5 +55,7 @@ int main(int argc, char *argv[]) {
 
 // print size characters from array letters
 void show_letters(int size, char letters[]) {
-    // Put your code here
+    for (int i = 0; i < size; i++ ){
+        putchar(letters[i]);
+    }
 }
