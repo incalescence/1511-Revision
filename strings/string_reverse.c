@@ -1,11 +1,10 @@
 // gnirts a esreveR (Reverse a string)
-// Created by
-//  ... (Z0000000)
-// Created on 2019-??-??
 
 #include <stdio.h>
 
 void string_reverse(char *buffer);
+int string_length(char *string);
+void string_copy(char *destination, char *source, int destination_size);
 
 int main(int argc, char *argv[]) {
 
@@ -28,5 +27,39 @@ int main(int argc, char *argv[]) {
 
 // Takes a string in `buffer`, and reverses it in-place.
 void string_reverse(char *buffer) {
-    // YOUR CODE GOES HERE!
+    int len = string_length(buffer);
+    char temp[len+1];
+    string_copy(temp,buffer,len+1);
+
+    int i = 0;
+    while (i < len) {
+        buffer[i] = temp[len-i-1];
+        i++;
+    }
+    
+}
+
+// Takes a string and finds its length, excluding the null-terminator.
+int string_length(char *string) {
+    int length = 0;
+    int i = 0;
+    while (string[i] != '\0') {
+        length++;
+        i++;
+    }
+    return length;
+}
+
+    // Takes a string in `source`, and copies it to `destination`, which
+// is `destSize` elements in size; only copies up to `destSize` bytes.
+// Ensures the `destination` array is null-terminated.
+void string_copy(char *destination, char *source, int destination_size) {
+    int i = 0;
+    while (i < destination_size-1) {
+        destination[i] = source[i];
+        i++;
+    }
+    if (i == destination_size-1){
+        destination[destination_size-1] = '\0';
+    }
 }
